@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./controls.component.css']
 })
 export class ControlsComponent implements OnInit {
+  
+  private runing: boolean;
+  private runNumber: number;
 
-  constructor() { }
+  constructor() { 
+    this.runing = false;
+    this.runNumber = 0;
+  }
 
   ngOnInit() {
+  }
+
+  start(){
+
+  }
+  stop(){
+    
   }
 
 }
