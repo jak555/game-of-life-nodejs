@@ -1,8 +1,11 @@
 export class Cell {
     private alive = false;
+    row: number;
+    column:number;
     
-    constructor(){
-
+    constructor(row:number, column:number){
+        row = row;
+        column = column;
     }
 
     changeState(){
@@ -10,5 +13,8 @@ export class Cell {
     }
     isAlive(){
         return this.alive;
+    }
+    resetAlive(){
+        this.alive = false;
     }
 }

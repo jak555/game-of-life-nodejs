@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { GameService } from '../_services/game.service';
+import { ControlsComponent } from '../controls/controls.component';
+import { Cell } from '../_models/cell';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  //@ViewChild(ControlsComponent, {read: true, static:true}) controls:ControlsComponent;
+  board: Cell[][];
+  constructor(private game: GameService) {
+    
   }
 
+  ngOnInit() {
+    this.board = this.game.grtBoard();
+  }
+  
 }

@@ -1,0 +1,11 @@
+.dashboard-row{
+    display: flex;
+}
+.dashboard-cell{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+}
+.alive{
+    background-color: gray;
+}
