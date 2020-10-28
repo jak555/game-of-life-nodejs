@@ -2,7 +2,6 @@
         <form [formGroup]="sizeForm" (ngSubmit)="start()">
 
     <div class="row">
-        
         <label class="col-6" for="size">Size: </label>
         <input class="form-control col-6" formControlName="size" id="size" name="size" type="number" step="1" min="5" max="20" value="5">
     </div>
@@ -13,12 +12,11 @@
 </div>
 <ng-template #startedBlock>
     <div class="row" >
-        <button [disabled]="running" class="btn btn-success btn-block">Next Stage</button>
+        <button [disabled]="running" (click)="next()" class="btn btn-success btn-block">Next Stage</button>
     </div>
 </ng-template>
 <div class="row">
-    <button [disabled]="!running" class="btn btn-warning btn-block">Stop</button>
+    <button [disabled]="running" (click)="reset()" class="btn btn-light btn-block">Reset</button>
 </div>
-<div class="row">
-    <button [disabled]="running" class="btn btn-light btn-block">Reset</button>
-</div>
+
+<p>Run number: {{runNumber}}</p>

@@ -8,13 +8,12 @@ import { GameService } from '../_services/game.service';
   styleUrls: ['./controls.component.css']
 })
 export class ControlsComponent implements OnInit {
+  @Output() buttonClicked: EventEmitter<void> = new EventEmitter<void>();
   
   private started: boolean;
   private runNumber: number;
   private running: boolean;
-  //boardSize: number = 5;
   sizeForm: FormGroup;
-  @Output() eventOutput = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder, private game: GameService) { 
     this.running = false;
@@ -34,22 +33,22 @@ export class ControlsComponent implements OnInit {
     if (this.sizeForm.invalid) {
       return;
     }
-    var valueToFix = this.fields.size.value;
-    //this.fields.size.setValue(parseInt(valueToFix));
-    //this.started = true;
-
+    var valueToFix:number = parseInt(this.fields.size.value, 10);
+    this.fields.size.setValue(valueToFix);
     this.game.createGame(valueToFix, valueToFix);
-    console.log(valueToFix)
-    this.eventOutput.emit(this.game);
+    this.started = true;
+    this.buttonClicked.emit();
   }
   next(){
     this.game.nextRun();
     this.runNumber = this.game.getRunNumber();
+    this.buttonClicked.emit();
   }
   reset(){
     this.game.resetGame();
     this.runNumber = 0;
     this.running = false;
     this.started = false;
+    this.buttonClicked.emit();
   }
 }

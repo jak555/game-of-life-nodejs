@@ -5,6 +5,9 @@
     width: 25px;
     height: 25px;
     background-color: white;
+    border-color: antiquewhite;
+    border-width: 1px;
+    border-style: solid;
 }
 .alive{
     background-color: gray;

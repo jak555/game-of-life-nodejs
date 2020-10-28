@@ -4,8 +4,15 @@ export class Cell {
     column:number;
     
     constructor(row:number, column:number){
-        row = row;
-        column = column;
+        this.row = row;
+        this.column = column;
+    }
+
+    getRow(){
+        return this.row;
+    }
+    getColumn(){
+        return this.column;
     }
 
     changeState(){
@@ -14,7 +21,7 @@ export class Cell {
     isAlive(){
         return this.alive;
     }
-    resetAlive(){
+    kill(){
         this.alive = false;
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GameService } from '../_services/game.service';
 import { ControlsComponent } from '../controls/controls.component';
 import { Cell } from '../_models/cell';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,14 +10,17 @@ import { Cell } from '../_models/cell';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  //@ViewChild(ControlsComponent, {read: true, static:true}) controls:ControlsComponent;
+  eventsChild: Subject<void> = new Subject<void>();
   board: Cell[][];
-  constructor(private game: GameService) {
-    
-  }
+
+  constructor(private game: GameService) { }
 
   ngOnInit() {
-    this.board = this.game.grtBoard();
+    
+  }
+  handleButtons(event){
+    this.board = this.game.getBoard()
+    this.eventsChild.next();
   }
   
 }
