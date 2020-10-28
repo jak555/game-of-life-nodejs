@@ -9,20 +9,14 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  @Input() board: Cell[][];
+  @Input() board: Cell[][] = [];
 
   private subscibedEvents: Subscription;
-  //board: Cell[][];
 
   constructor(private game: GameService) { }
 
   ngOnInit() {
-    //console.log(this.events)
-    /*
-    this.subscibedEvents = this.events.subscribe(() => {
-      this.board = this.game.grtBoard();
-    });
-    */
+
   }
 
 }

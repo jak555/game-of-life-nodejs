@@ -1,27 +1,20 @@
 # GameOfLifeNodejs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17. Requested as a mini test for MagmaLabs. It implements the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) ([John Horton Conway 1970](https://en.wikipedia.org/wiki/John_Horton_Conway)) using Angular and NodeJS.
 
-## Development server
+## Instructions
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Cloning the project
 
-## Code scaffolding
+First step is to clone this project, for that you have to open a new terminal window and go to the desired folder. After that you will have to clone the project using the following command: `git clone https://github.com/jak555/game-of-life-nodejs.git`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Build
+This project includes source code and the build, but if you want to make sure you have the latest build you can `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build which includes a lot of optimizations for production environments.
 
-## Build
+### Testing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The unit tests were made with Jasmine and are executed by [Karma](https://karma-runner.github.io). To do so you will have to use the following command: `ng test`
 
-## Running unit tests
+### Running on Node JS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You may want to make sure that you have the latest version compiled, for that I recommend to first check the build section in this document but if you already have it you can use `npm start` to run the NodeJS server. Navigate to [`http://localhost:3000/`](http://localhost:3000/).

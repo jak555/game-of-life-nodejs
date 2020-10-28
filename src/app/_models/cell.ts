@@ -11,6 +11,7 @@ export class Cell {
     getRow(){
         return this.row;
     }
+    
     getColumn(){
         return this.column;
     }
@@ -18,9 +19,11 @@ export class Cell {
     changeState(){
         this.alive = !this.alive;
     }
+
     isAlive(){
         return this.alive;
     }
+
     kill(){
         this.alive = false;
     }

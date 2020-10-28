@@ -1,4 +1,4 @@
-<div class="dashboard">
+<div class="dashboard" id="grid">
     <div class="dashboard-row" *ngFor="let row of board">
         <div class="dashboard-cell" [class.alive]="cell.isAlive()" *ngFor="let cell of row"></div>
     </div>

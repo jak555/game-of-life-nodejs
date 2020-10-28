@@ -33,7 +33,7 @@ export class ControlsComponent implements OnInit {
     if (this.sizeForm.invalid) {
       return;
     }
-    var valueToFix:number = parseInt(this.fields.size.value, 10);
+    let valueToFix:number = parseInt(this.fields.size.value, 10);
     this.fields.size.setValue(valueToFix);
     this.game.createGame(valueToFix, valueToFix);
     this.started = true;

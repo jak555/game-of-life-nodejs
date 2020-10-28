@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GridComponent } from './grid.component';
+import { By } from 'protractor';
 
 describe('GridComponent', () => {
   let component: GridComponent;
@@ -21,5 +22,8 @@ describe('GridComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should not be empty cells', () => {
+    expect(component.board).toBeDefined();
   });
 });

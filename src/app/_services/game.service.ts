@@ -15,11 +15,11 @@ export class GameService { // this would be actually the board
 
   createGame(rows: number, columns: number){
 
-    var grid: Cell[][] = [];
+    let grid: Cell[][] = [];
 
-    for(var i = 0; i < rows; i++){
-      let row: Array<Cell> = new Array();
-      for(var j = 0; j < columns; j++){
+    for(let i = 0; i < rows; i++){
+      let row: Array<Cell> = [];
+      for(let j = 0; j < columns; j++){
         row.push(new Cell(i, j));
       }
       grid.push(row);
@@ -30,19 +30,10 @@ export class GameService { // this would be actually the board
   }
 
   resetGame(){
-    /*
-    this.cells.forEach(cellRow => {
-      cellRow.forEach(cell => {
-        if(cell.isAlive()){
-          cell.changeState();
-        }
-      });
-    });
-    this.randomizeBoard();
-    */
    this.cells = [];
     this.runNumber = 0;
   }
+
   randomizeBoard(){
     this.cells.forEach(cellRow => {
       cellRow.forEach(cell => {
@@ -51,12 +42,12 @@ export class GameService { // this would be actually the board
         }
       });
     });
-    
   }
+
   nextRun(){
     this.cells.forEach(row => {
       row.forEach(cell => {
-        var cellNeighbours = this.getNeighbours({row: cell.getRow(), column: cell.getColumn()});
+        let cellNeighbours = this.getNeighbours({row: cell.getRow(), column: cell.getColumn()});
 
         if(cell.isAlive()){
           if(cellNeighbours.length < 2 || cellNeighbours.length > 3){
@@ -72,9 +63,10 @@ export class GameService { // this would be actually the board
     });
     this.runNumber++;
   }
+  
   getNeighbours(position): Cell[]{
-    var neighbours = [];
-    var elementsToSearch = [
+    let neighbours = [];
+    let elementsToSearch = [
       {row: position.row, column: position.column - 1},
       {row: position.row, column: position.column + 1},
       {row: position.row + 1, column: position.column},
@@ -87,7 +79,7 @@ export class GameService { // this would be actually the board
 
     this.cells.forEach(row => {
       row.forEach(cell => {
-        var contains = elementsToSearch.some(element => {
+        let contains = elementsToSearch.some(element => {
           return JSON.stringify({row: cell.row, column: cell.column}) === JSON.stringify(element);
         });
         if(contains && cell.isAlive()){

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,7 +9,8 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ DashboardComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
@@ -21,5 +23,17 @@ describe('DashboardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should load controls', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    let controlsElement = compiled.querySelector('#controls');
+    expect(controlsElement).toBeDefined();
+  });
+
+  it('should load grid', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    let controlsElement = compiled.querySelector('#grid');
+    expect(controlsElement).toBeDefined();
   });
 });
