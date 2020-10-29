@@ -17,4 +17,4 @@ The unit tests were made with Jasmine and are executed by [Karma](https://karma-
 
 ### Running on Node JS
 
-You may want to make sure that you have the latest version compiled, for that I recommend to first check the build section in this document but if you already have it you can use `npm start` to run the NodeJS server and navigate to [`http://localhost:3000/`](http://localhost:3000/).
+You may want to make sure that you have the latest version compiled. For tha,t I recommend to first check the build section in this document but if you already have it, you can use `npm start` to run the NodeJS server and navigate to [`http://localhost:3000/`](http://localhost:3000/).
